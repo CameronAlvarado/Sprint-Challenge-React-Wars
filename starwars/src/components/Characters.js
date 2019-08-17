@@ -20,8 +20,10 @@ function Characters() {
             <Grid relaxed columns={2} divided="vertically">
                 <Grid.Row padded="vertically" columns={2}>
                     {characterData.map(character => {
+                        console.log(character)
                         return (
                         <CharacterCard
+                            key={character.name}
                             className="cards"
                             name={character.name}
                             height={character.height}
@@ -29,6 +31,7 @@ function Characters() {
                             id={character.id}
                             mass={character.mass}
                             link={character.url}
+                            films={character.films}
                         />
                         );
                     })}
